@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>New Teacher Application – Bayyinah Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    table {
+      border-collapse: separate !important;
+      border-spacing: 0 !important;
+    }
+    th, td {
+      padding: 12px 15px !important;
+      border: 1px solid #d3d7db !important; /* Light gray border */
+    }
+    th {
+      background-color: #f7f9fb !important; /* Light header bg */
+      text-align: left !important;
+      font-weight: 600 !important;
+      color: #555;
+    }
+    table.rounded-corners {
+      border: 1px solid #d3d7db !important;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 560px;
+      margin-top: 15px;
+    }
+    table.rounded-corners tr:first-child th:first-child {
+      border-top-left-radius: 8px;
+    }
+    table.rounded-corners tr:first-child th:last-child {
+      border-top-right-radius: 8px;
+    }
+    table.rounded-corners tr:last-child td:first-child {
+      border-bottom-left-radius: 8px;
+    }
+    table.rounded-corners tr:last-child td:last-child {
+      border-bottom-right-radius: 8px;
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#053f7a; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <table
+    align="center"
+    width="100%"
+    cellpadding="0"
+    cellspacing="0"
+    style="max-width:620px; margin:auto; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.08);"
+  >
+    <!-- Header -->
+    <tr>
+      <td style="padding:20px 0 10px 0; text-align:center; background:#fff;">
+        <img
+          src="https://res.cloudinary.com/dromjx3rx/image/upload/v1750687676/Bayyinah_Logo_-_white_background_jo9dsg.webp"
+          alt="Bayyinah Academy Logo"
+          style="max-width:220px; height:auto;"
+        />
+      </td>
+    </tr>
+
+    <!-- Body -->
+    <tr>
+      <td style="padding:25px 30px; color:#333; line-height:1.6;">
+        <h2 style="color:#2e86c1; margin-top:0; font-size:22px;">🆕 New Teacher Application Received</h2>
+        <p>Dear Admin Team,</p>
+        <p>A new teacher has submitted a job application with the following details:</p>
+
+        <!-- Details Table -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="rounded-corners">
+          <tbody>
+            <tr><th>First Name</th><td>{{params.contact.firstName}}</td></tr>
+            <tr><th>Last Name</th><td>{{params.contact.lastName}}</td></tr>
+            <tr><th>Gender</th><td>{{params.contact.gender}}</td></tr>
+            <tr><th>Email</th><td>{{params.contact.email}}</td></tr>
+            <tr><th>Contact No.</th><td>{{params.contact.phone}}</td></tr>
+            <tr><th>Country</th><td>{{params.contact.country}}</td></tr>
+            <tr><th>Date of Birth</th><td>{{params.contact.dob}}</td></tr>
+            <tr><th>Nationality</th><td>{{params.contact.nationality}}</td></tr>
+            <tr><th>Occupation</th><td>{{params.contact.occupation}}</td></tr>
+            <tr><th>Marital Status</th><td>{{params.contact.maritalStatus}}</td></tr>
+            <tr><th>Facebook Profile</th><td>{{params.contact.facebook}}</td></tr>
+            <tr><th>About Me</th><td>{{params.contact.aboutMe}}</td></tr>
+            <tr><th>Qualification</th><td>{{params.contact.qualification}}</td></tr>
+            <tr><th>Experience</th><td>{{params.contact.experience}}</td></tr>
+            <tr><th>Mother Language</th><td>{{params.contact.motherLanguage}}</td></tr>
+            <tr><th>Other Languages</th><td>{{params.contact.otherLanguage}}</td></tr>
+            <tr><th>Applying For</th><td>{{params.contact.applyingFor}}</td></tr>
+            <tr><th>Can Teach Tajweed in English</th><td>{{params.contact.teachTajweedInEnglish}}</td></tr>
+            <tr><th>Preferred Interview Time</th><td>{{params.contact.preferredInterviewTime}}</td></tr>
+            <tr><th>Hours per Week</th><td>{{params.contact.hoursPerWeek}}</td></tr>
+            <tr><th>Has Ijazah</th><td>{{params.contact.haveIjazah}}</td></tr>
+            <tr><th>Has Children</th><td>{{params.contact.haveChildren}}</td></tr>
+            <tr><th>Expected Salary</th><td>{{params.contact.expectedSalary}}</td></tr>
+            <tr><th>Employment Type</th><td>{{params.contact.employmentType}}</td></tr>
+            <tr><th>Ideal Candidate Description</th><td>{{params.contact.idealCandidate}}</td></tr>
+            <tr><th>Discovery Sources</th><td>{{params.contact.discoverySources}}</td></tr>
+            <tr><th>Declaration Agreed</th><td>{{params.contact.declaration}}</td></tr>
+            <tr><th>Submitted At</th><td>{{params.contact.submittedAt}}</td></tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top:25px;">
+          Please review the application and proceed with the recruitment process accordingly.
+        </p>
+        
+        <!-- Uploaded Files Section -->
+        <div style="margin-top:25px; padding:20px; background:#f8f9fa; border-radius:8px; border:1px solid #e9ecef;">
+          <h3 style="color:#2e86c1; margin-top:0; margin-bottom:15px; font-size:18px;">📎 Uploaded Files</h3>
+          <p style="margin:0 0 15px 0; color:#6c757d; font-size:14px;">
+            The following files have been uploaded with this application. Please check the email attachments to access these files.
+          </p>
+          
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%; border-collapse:collapse;">
+            <tbody>
+              <tr style="border-bottom:1px solid #dee2e6;">
+                <td style="padding:8px 0; color:#495057; font-weight:500; width:40%;">Profile Image Uploaded</td>
+                <td style="padding:8px 0; color:#6c757d;">
+                  {% if params.contact.profileImage %} Yes {% else %} No {% endif %}
+                </td>
+              </tr>
+              <tr style="border-bottom:1px solid #dee2e6;">
+                <td style="padding:8px 0; color:#495057; font-weight:500;">CV/Resume Uploaded</td>
+                <td style="padding:8px 0; color:#6c757d;">
+                  {% if params.contact.cv %} Yes {% else %} No {% endif %}
+                </td>
+              </tr>
+              <tr style="border-bottom:1px solid #dee2e6;">
+                <td style="padding:8px 0; color:#495057; font-weight:500;">Reading Audio Uploaded</td>
+                <td style="padding:8px 0; color:#6c757d;">
+                  {% if params.contact.readingAudio %} Yes {% else %} No {% endif %}
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:8px 0; color:#495057; font-weight:500;">Recitation Audio Uploaded</td>
+                <td style="padding:8px 0; color:#6c757d;">
+                  {% if params.contact.recitationAudio %} Yes {% else %} No {% endif %}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style="margin-top:15px; padding:12px; background:#e3f2fd; border-radius:6px; border-left:4px solid #2196f3;">
+            <p style="margin:0; color:#1565c0; font-size:13px;">
+              <strong>Note:</strong> All uploaded files are attached to this email. Please download and review them as part of the application evaluation process.
+            </p>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td style="padding:24px 36px; background:#f9f9f9; border-top:1px solid #eee;">
+        <img
+          src="https://res.cloudinary.com/dromjx3rx/image/upload/v1750784529/logo_-_Bayyinah_Transparent_xmxbc9.png"
+          alt="Bayyinah Academy Logo"
+          style="width:130px; height:auto; display:block; margin-bottom:10px;"
+        />
+
+        <div style="color:#636e72; font-size:14px; line-height:1.6; margin-bottom:10px;">
+          <strong>📩</strong>
+          <a href="mailto:support@bayyinah.academy" style="color:#2e86c1; text-decoration:none;">support@bayyinah.academy</a> |
+          <strong>📱</strong>
+          <a href="tel:+447700183406" style="color:#2e86c1; text-decoration:none;">+44 7700 183406</a> |
+          <strong>🌐</strong>
+          <a href="https://www.bayyinah.academy" style="color:#2e86c1; text-decoration:none;">www.bayyinah.academy</a><br />
+          <strong>📌</strong> 128, City Road ECIV 2NX, London, United Kingdom
+        </div>
+
+        <div style="margin:10px 0 0 0;">
+          <a href="https://www.facebook.com/bayyinahacademy" style="margin-right:10px; display:inline-block;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="20" style="vertical-align:middle;" />
+          </a>
+          <a href="https://www.instagram.com/bayyinahacademy" style="margin-right:10px; display:inline-block;">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="20" style="vertical-align:middle;" />
+          </a>
+          <a href="https://wa.me/447700183406" style="display:inline-block;">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="20" style="vertical-align:middle;" />
+          </a>
+        </div>
+
+        <div style="font-size:13px; color:#b2bec3; margin-top:12px;">
+          <a href="https://bayyinah-client.vercel.app/privacy-policy" style="color:#b2bec3; text-decoration:underline; margin-right:10px;">Privacy Policy</a> |
+          <a href="https://bayyinah-client.vercel.app/terms-of-services" style="color:#b2bec3; text-decoration:underline; margin-left:10px;">Terms &amp; Conditions</a>
+        </div>
+
+        <div style="font-size:13px; color:#b2bec3; margin-top:6px;">
+          © 2025 Bayyinah Academy. All rights reserved.
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
