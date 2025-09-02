@@ -11,16 +11,16 @@ export type Blog = {
 export const BLOGS: Blog[] = [
   {
     slug: "Ramadan-Month-Reflection-and-Renewal",
-  publishAt: "2023-10-24",
-  title: "Ramadan: A Month of Reflection and Renewal",
-  shortDescription: "Ramadan, the ninth month of the Islamic…",
-  featureImage: {
-    url: "/blog-feature-1.png",
-    width: 3996,
-    height: 2838,
-    alt: "Ramadan feature image",
-  },
-  content: `
+    publishAt: "2023-10-24",
+    title: "Ramadan: A Month of Reflection and Renewal | Bayyinah Academy",
+    shortDescription: "Discover the true essence of Ramadan – a month of reflection, renewal, and spiritual growth. Learn how fasting, prayer, and Quran recitation during Ramadan strengthen faith and bring inner peace",
+    featureImage: {
+      url: "/blog-feature-1.png",
+      width: 3996,
+      height: 2838,
+      alt: "Ramadan feature image",
+    },
+    content: `
   **The Spiritual Significance of Ramadan: A Month of Reflection and Renewal.**
   
   
@@ -77,8 +77,8 @@ export const BLOGS: Blog[] = [
   {
     slug: "Shaban-Month-Preparation-and-Spiritual",
     publishAt: "2023-11-10",
-    title: "Sha'ban: A Month of Preparation and Spiritual",
-    shortDescription: "Sha'ban, the eighth month of the Islamic…",
+  title: "Sha'ban: A Month of Preparation and Spiritual Growth | Bayyinah Academy",
+  shortDescription: "Explore the significance of Sha'ban, a month of preparation and spiritual growth before Ramadan. Learn about its virtues, recommended acts of worship, and how Sha'ban helps strengthen faith and devotion",
     featureImage: { url: "/blog-feature-2.png", width: 3996, height: 2838, alt: "Sha'ban feature image" },
     content: `
 **The Significance of Sha'ban: A Month of Preparation and Spiritual Elevation**
@@ -116,8 +116,8 @@ Sha'ban is a golden opportunity to awaken the heart, seek forgiveness, and align
   {
     slug: "Rajab-Month-Divine-Mercy-and-Awakening",
     publishAt: "2024-01-16",
-    title: "Rajab: A Month of Divine Mercy and Awakening",
-    shortDescription: "Rajab, the seventh month of the Islamic…",
+  title: "Rajab: A Month of Divine Mercy and Spiritual Awakening | Bayyinah Academy",
+  shortDescription: "Discover the virtues of Rajab, a sacred month of divine mercy and spiritual awakening. Learn about its importance in Islam, recommended worship, and how Rajab prepares believers for Ramadan",
     featureImage: { url: "/blog-feature-3.png", width: 3996, height: 2838, alt: "Rajab feature image" },
     content: `
 **The Sacredness of Rajab: A Month of Divine Mercy and Spiritual Awakening**
@@ -157,8 +157,8 @@ Rajab is a divine invitation to awaken the soul, seek forgiveness, and reignite 
   {
     slug: "Shawwal-Month-Gratitude-and-Continuity",
     publishAt: "2023-03-16",
-    title: "Shawwal: A Month of Gratitude and Continuity",
-    shortDescription: "Shawwal emphasizes sustaining the momentum built in Ramadan…",
+  title: "Shawwal: A Month of Gratitude and Continuity | Bayyinah Academy",
+  shortDescription: "Learn the significance of Shawwal, a month of gratitude and continuity after Ramadan. Discover the virtues of fasting in Shawwal, spiritual benefits, and ways to maintain consistency in worship",
     featureImage: { url: "/blog-feature-4.png", width: 3996, height: 2838, alt: "Shawwal feature image" },
     content: `
 The Blessings of Shawwal: A Month of Gratitude and Continuity

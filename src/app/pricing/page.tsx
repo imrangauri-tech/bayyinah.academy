@@ -7,6 +7,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: "Bayyinah Academy Pricing – Affordable Quran & Arabic Online Classes from $8/hr",
+  description:
+    "Discover Bayyinah Academy’s transparent and flexible pricing plans: Basic ($8/hr), Essentials ($9/hr), Premium ($11/hr), and Platinum ($14/hr). All include native Arabic teachers, e-certificates, e-syllabus access, and more—with family discounts and no hidden fees. Choose your plan and elevate your Quran learning journey today",
+};
+
 const PRICING_PLANS = [
     {
     key: "premium",

@@ -1,4 +1,7 @@
-'use client';
+
+"use client";
+
+import Head from "next/head";
 
 import React, { useState } from "react";
 import PageHeroSection from "@/components/common/PageHeroSection";
@@ -104,82 +107,91 @@ const COURSE_GROUPS = {
 };
 
 const CoursesPage = () => {
+  // SEO meta tags for client component
+  const seoTitle = "Quran Course Online | Learn Quran with Tajweed & Tafseer – Bayyinah Academy";
+  const seoDescription = "Enroll in Bayyinah Academy’s Quran course online and master Tajweed, Tafseer, and Quran recitation with expert teachers. Flexible online classes for all ages. Start your Quran learning journey today.";
   const [activeCategory, setActiveCategory] = useState<"all" | "quran" | "arabic" | "islamic">("all");
 
   const filteredCourses = COURSE_GROUPS[activeCategory].map((index) => COURSES_DATA[index]);
 
   return (
-    <div aria-describedby="courses-page">
-      <PageHeroSection
-        title="Courses"
-        description="Master Quran reading and Arabic fluency with step-by-step lessons that build confidence and deepen your spiritual connection."
-      />
+    <>
+      <Head>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+      </Head>
+      <div aria-describedby="courses-page">
+        <PageHeroSection
+          title="Courses"
+          description="Master Quran reading and Arabic fluency with step-by-step lessons that build confidence and deepen your spiritual connection."
+        />
 
-      <section className="py-10 sm:py-18 bg-neutral-100">
-        <div className="container">
-          {/* Category Buttons */}
-          <div className="flex gap-4 flex-wrap mb-10">
-            <button
-              className={`rounded-md px-8 py-3 text-base font-medium transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform ${
-                activeCategory === "all"
-                  ? "text-black"
-                  : "bg-white text-black border border-gray-300 hover:bg-gray-50"
-              }`}
-              style={activeCategory === "all" ? { backgroundColor: "#FAAF2F" } : {}}
-              onClick={() => setActiveCategory("all")}
-            >
-              All
-            </button>
+        <section className="py-10 sm:py-18 bg-neutral-100">
+          <div className="container">
+            {/* Category Buttons */}
+            <div className="flex gap-4 flex-wrap mb-10">
+              <button
+                className={`rounded-md px-8 py-3 text-base font-medium transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform ${
+                  activeCategory === "all"
+                    ? "text-black"
+                    : "bg-white text-black border border-gray-300 hover:bg-gray-50"
+                }`}
+                style={activeCategory === "all" ? { backgroundColor: "#FAAF2F" } : {}}
+                onClick={() => setActiveCategory("all")}
+              >
+                All
+              </button>
 
-            <button
-              className={`rounded-md px-8 py-3 text-base font-medium transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform ${
-                activeCategory === "arabic"
-                  ? "text-black"
-                  : "bg-white text-black border border-gray-300 hover:bg-gray-50"
-              }`}
-              style={activeCategory === "arabic" ? { backgroundColor: "#FAAF2F" } : {}}
-              onClick={() => setActiveCategory("arabic")}
-            >
-              Arabic
-            </button>
+              <button
+                className={`rounded-md px-8 py-3 text-base font-medium transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform ${
+                  activeCategory === "arabic"
+                    ? "text-black"
+                    : "bg-white text-black border border-gray-300 hover:bg-gray-50"
+                }`}
+                style={activeCategory === "arabic" ? { backgroundColor: "#FAAF2F" } : {}}
+                onClick={() => setActiveCategory("arabic")}
+              >
+                Arabic
+              </button>
 
-            <button
-              className={`rounded-md px-8 py-3 text-base font-medium transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform ${
-                activeCategory === "quran"
-                  ? "text-black"
-                  : "bg-white text-black border border-gray-300 hover:bg-gray-50"
-              }`}
-              style={activeCategory === "quran" ? { backgroundColor: "#FAAF2F" } : {}}
-              onClick={() => setActiveCategory("quran")}
-            >
-              Quran
-            </button>
+              <button
+                className={`rounded-md px-8 py-3 text-base font-medium transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform ${
+                  activeCategory === "quran"
+                    ? "text-black"
+                    : "bg-white text-black border border-gray-300 hover:bg-gray-50"
+                }`}
+                style={activeCategory === "quran" ? { backgroundColor: "#FAAF2F" } : {}}
+                onClick={() => setActiveCategory("quran")}
+              >
+                Quran
+              </button>
 
-            <button
-              className={`rounded-md px-8 py-3 text-base font-medium transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform ${
-                activeCategory === "islamic"
-                  ? "text-black"
-                  : "bg-white text-black border border-gray-300 hover:bg-gray-50"
-              }`}
-              style={activeCategory === "islamic" ? { backgroundColor: "#FAAF2F" } : {}}
-              onClick={() => setActiveCategory("islamic")}
-            >
-              Islamic Studies
-            </button>
+              <button
+                className={`rounded-md px-8 py-3 text-base font-medium transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform ${
+                  activeCategory === "islamic"
+                    ? "text-black"
+                    : "bg-white text-black border border-gray-300 hover:bg-gray-50"
+                }`}
+                style={activeCategory === "islamic" ? { backgroundColor: "#FAAF2F" } : {}}
+                onClick={() => setActiveCategory("islamic")}
+              >
+                Islamic Studies
+              </button>
+            </div>
+
+            {/* Course Cards */}
+            <div className="w-full flex flex-col items-start gap-y-8 mb-16">
+              {filteredCourses.map((course, index) => (
+                <CourseCard key={index} cardData={course} />
+              ))}
+            </div>
           </div>
+        </section>
 
-          {/* Course Cards */}
-          <div className="w-full flex flex-col items-start gap-y-8 mb-16">
-            {filteredCourses.map((course, index) => (
-              <CourseCard key={index} cardData={course} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <ActionSection />
-      <FaqSectionCourse />
-    </div>
+        <ActionSection />
+        <FaqSectionCourse />
+      </div>
+    </>
   );
 };
 

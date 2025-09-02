@@ -89,6 +89,34 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { details } = await params;
   const canonical = normalizeToCanonical(details);
+  if (canonical === "quran-memorization") {
+    return {
+      title: "Memorize Quran Online | Expert Hifz Teachers – Bayyinah Academy",
+      description:
+        "Start your Quran memorization journey with Bayyinah Academy. Learn to memorize the Quran online with certified Hifz teachers, step-by-step guidance, and flexible online classes for kids & adults",
+    };
+  }
+  if (canonical === "mastery-in-quran-reading") {
+    return {
+      title: "Tajweed Classes Online | Learn Tajweed Online, Quran Memorization & Quran Reading Classes",
+      description:
+        "Join Bayyinah Academy for expert-led Tajweed classes online. Learn Tajweed online with certified teachers, enroll in Quran memorization classes, and improve recitation with Quran reading classes online for all ages",
+    };
+  }
+  if (canonical === "arabic-language-read-write-talk-and-understand") {
+    return {
+      title: "Quranic Arabic Lessons Online | Arabic Course Online & Arabic Classes for Kids",
+      description:
+        "Learn Quranic Arabic lessons online with Bayyinah Academy. Enroll in our Arabic course online to master grammar, vocabulary & Quran understanding. Special online Arabic classes for kids with expert teachers",
+    };
+  }
+  if (canonical === "islamic-studies-islamic-etiquettes-and-manners") {
+    return {
+      title: "Islamic Studies Online Courses | Islamic Online Classes, Quran Studies & Islamic Online Courses",
+      description:
+        "Bayyinah Academy offers Islamic studies online courses for all ages. Join interactive Islamic online classes, explore Quran studies online, and gain deep knowledge through structured Islamic online courses with expert teachers",
+    };
+  }
   const title = (isCanonicalSlug(canonical) && TITLE_BY_CANONICAL[canonical]) || "Course Details";
   return { title };
 }

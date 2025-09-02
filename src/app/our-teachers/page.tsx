@@ -1,3 +1,8 @@
+// SEO metadata for /our-teachers
+export const metadata = {
+  title: "Quran Course Online | Learn Quran with Tajweed & Tafseer – Bayyinah Academy",
+  description: "Enroll in Bayyinah Academy’s Quran course online and master Tajweed, Tafseer, and Quran recitation with expert teachers. Flexible online classes for all ages. Start your Quran learning journey today.",
+};
 import PageHeroSection from "@/components/common/PageHeroSection";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";

@@ -5,6 +5,12 @@ import MasterYourSkills from "./MasterYourSkills";
 import TrialClassSection from "./TrialClassSection";
 import { FaqSection } from "@/components/homepage";
 
+export const metadata = {
+  title: "About Us – Bayyinah Academy | Learn Quran & Arabic Online with Expert Teachers",
+  description:
+    "Discover Bayyinah Academy’s mission to make Quran, Tajweed, and Arabic learning accessible worldwide. Learn about our expert teachers, online courses, and dedication to providing quality Islamic education for students of all ages",
+};
+
 const AboutUsPage = () => {
   return (
     <React.Fragment>
