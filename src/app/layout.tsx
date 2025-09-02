@@ -1,16 +1,3 @@
-        {/* Google Ads (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17513919644"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17513919644');
-            `,
-          }}
-        />
-        {/* End Google Ads */}
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
