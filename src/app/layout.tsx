@@ -1,3 +1,16 @@
+        {/* Google Ads (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17513919644"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17513919644');
+            `,
+          }}
+        />
+        {/* End Google Ads */}
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
@@ -38,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+  <head>
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -52,8 +65,46 @@ export default function RootLayout({
           }}
         />
         {/* End Google Tag Manager */}
+
+        {/* Google Analytics (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5T6RTQDNP1"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-5T6RTQDNP1');
+            `,
+          }}
+        />
+        {/* End Google Analytics */}
+
+        {/* Google Ads (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17513919644"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17513919644');
+            `,
+          }}
+        />
+        {/* End Google Ads */}
       </head>
       <body className={`${montserrat.variable} antialiased`}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TTXQGS8H"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <MainHeader />
         <main>{children}</main>
         <JoiningGuide />
