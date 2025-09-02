@@ -73,7 +73,13 @@ const CourseCard: React.FC<CourseCardProps> = ({ cardData }) => {
             asChild
             className="bg-[#FAAF2F] hover:bg-[#e89b1e] text-black transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform"
           >
-            <Link href={cardData.action.url}>Learn More</Link>
+            <Link href={cardData.action.url
+              .replace('/courses/mastery-in-quran-reading', '/courses/Mastery-in-Quran-Reading')
+              .replace('/courses/quran-memorization', '/courses/Quran-Memorization')
+              .replace('/courses/arabic-language-read-write-talk-and-understand', '/courses/Arabic-Language-Read-Write-Speak-and-Understand')
+              .replace('/courses/islamic-studies-islamic-etiquettes-and-manners', '/courses/Islamic-Studies-Islamic-Etiquettes-and-Manners')
+              .replace('/courses/arabic-language-for-school-students', '/courses/Arabic-Language-for-School-Students')
+            }>Learn More</Link>
           </Button>
         </div>
       </div>

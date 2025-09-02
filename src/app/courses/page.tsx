@@ -21,7 +21,7 @@ const COURSES_DATA: CourseCardTypes[] = [
       "This Tajweed-focused course guides students from beginner to advanced Quran reading with clear pronunciation, fluency, and confidence.",
     action: {
       label: "Learn More",
-      url: "/courses/mastery-in-quran-reading", // fixed: lowercase-kebab
+      url: "/courses/Mastery-in-Quran-Reading", // fixed: uppercase-kebab
     },
     enrollUrl: "/trial",
   },
@@ -38,7 +38,7 @@ const COURSES_DATA: CourseCardTypes[] = [
       "This course helps you memorize the entire Quran or selected portions through structured techniques, Tajweed, and revision.",
     action: {
       label: "Learn More",
-      url: "/courses/quran-memorization", // fixed
+      url: "/courses/Quran-Memorization", // TitleCase
     },
     enrollUrl: "/trial",
   },
@@ -55,7 +55,7 @@ const COURSES_DATA: CourseCardTypes[] = [
       "Arabic language course for intermediate learners to improve reading, writing, speaking, and comprehension in formal and daily use.",
     action: {
       label: "Learn More",
-      url: "/courses/arabic-language-read-write-talk-and-understand", // fixed: Talk (not Speak) + lowercase-kebab
+      url: "/courses/Arabic-Language-Read-Write-Speak-and-Understand", // TitleCase + Speak
     },
     enrollUrl: "/trial",
   },
@@ -72,7 +72,7 @@ const COURSES_DATA: CourseCardTypes[] = [
       "Islamic etiquette (Adab) course covers personal, social, and spiritual manners to build strong character and deepen faith.",
     action: {
       label: "Learn More",
-      url: "/courses/islamic-studies-islamic-etiquettes-and-manners", // fixed
+      url: "/courses/Islamic-Studies-Islamic-Etiquettes-and-Manners", // TitleCase
     },
     enrollUrl: "/trial",
   },
@@ -89,7 +89,7 @@ const COURSES_DATA: CourseCardTypes[] = [
       "Academic Arabic course for Gulf schools strengthens reading, writing, speaking, and listening skills while integrating Arab culture and MSA.",
     action: {
       label: "Learn More",
-      url: "/courses/arabic-language-for-school-students", // fixed
+      url: "/courses/Arabic-Language-for-School-Students", // TitleCase
     },
     enrollUrl: "/trial",
   },

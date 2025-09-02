@@ -76,7 +76,13 @@ export default function TopCoursesBox({ items, intervalMs = 4000 }: { items: Top
         <p className="mt-2 text-sm text-gray-700 line-clamp-3 transition-colors duration-300 ease-out group-hover:text-gray-800">{active.shortDescription}</p>
 
         <Link
-          href={active.href}
+          href={active.href
+            .replace('/courses/mastery-in-quran-reading', '/courses/Mastery-in-Quran-Reading')
+            .replace('/courses/quran-memorization', '/courses/Quran-Memorization')
+            .replace('/courses/arabic-language-read-write-talk-and-understand', '/courses/Arabic-Language-Read-Write-Speak-and-Understand')
+            .replace('/courses/islamic-studies-islamic-etiquettes-and-manners', '/courses/Islamic-Studies-Islamic-Etiquettes-and-Manners')
+            .replace('/courses/arabic-language-for-school-students', '/courses/Arabic-Language-for-School-Students')
+          }
           className="mt-4 inline-flex w-full items-center justify-center rounded-md bg-[#FAAF2F] px-4 py-2.5 text-sm font-semibold text-black hover:bg-[#e89b1e] transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg transform"
           aria-label={`Learn more about ${active.title}`}
         >
