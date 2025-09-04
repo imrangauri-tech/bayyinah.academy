@@ -24,11 +24,32 @@ interface TrialFormData {
 
 const countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua & Deps", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Rep", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Congo {Democratic Rep}", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland {Republic}", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea North", "Korea South", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar {Burma}", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russian Federation", "Rwanda", "St Kitts & Nevis", "St Lucia", "Saint Vincent & the Grenadines", "Samoa", "San Marino", "Sao Tome & Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
 
+
+
 const TrialFormPage = () => {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  // Auto-detect country and country code
+  const [geoCountry, setGeoCountry] = useState("");
+  const [geoCountryCode, setGeoCountryCode] = useState("");
+  useEffect(() => {
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        setGeoCountry(data.country_name || "");
+        setGeoCountryCode((data.country_code || "").toLowerCase());
+      });
+  }, []);
+
+  // Calculate tomorrow's date in YYYY-MM-DD format
+  const tomorrow = React.useMemo(() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().split("T")[0];
+  }, []);
 
   const {
     register,
@@ -227,7 +248,7 @@ const TrialFormPage = () => {
       rules={{ required: "Phone number is required" }}
       render={({ field }) => (
         <PhoneInput
-          country={"in"}
+          country={geoCountryCode || undefined}
           value={field.value}
           onChange={field.onChange}
           inputProps={{ name: field.name, required: true }}
@@ -249,6 +270,11 @@ const TrialFormPage = () => {
     <select
       {...register("country", { required: "Country is required" })}
       className="w-full border border-gray-300 rounded-md px-3 pr-8 h-[42px] text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+      value={geoCountry && countries.includes(geoCountry) ? geoCountry : undefined}
+      onChange={e => {
+        // let react-hook-form handle the value
+        register("country").onChange(e);
+      }}
     >
       <option value="">Choose your country</option>
       {countries.map((c) => (
@@ -439,7 +465,7 @@ const TrialFormPage = () => {
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm mb-1">Preferred Date</label>
-                      <input type="date" {...register("preferredDate", { required: "Preferred date is required" })} className="w-full border rounded-lg px-4 py-2 text-sm" />
+                      <input type="date" min={tomorrow} {...register("preferredDate", { required: "Preferred date is required" })} className="w-full border rounded-lg px-4 py-2 text-sm" />
                       {errors.preferredDate && (
                         <p className="text-red-500 text-sm mt-1">Please select a preferred date</p>
                       )}
