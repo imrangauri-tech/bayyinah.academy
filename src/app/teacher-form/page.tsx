@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -79,6 +79,21 @@ export default function TeacherFormPage() {
     resolver: zodResolver(teacherFormSchema),
     mode: "onBlur",
   });
+
+  // Geolocation state for country and code
+  const [geoCountry, setGeoCountry] = useState("");
+  const [geoCountryCode, setGeoCountryCode] = useState("");
+  useEffect(() => {
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        setGeoCountry(data.country_name || "");
+        setGeoCountryCode((data.country_code || "").toLowerCase());
+        if (data.country_code) {
+          setValue("country", data.country_code.toLowerCase());
+        }
+      });
+  }, [setValue]);
 
   // ✅ Validate only fields in the current step
   const stepFields: Record<number, (keyof TeacherFormData)[]> = {
@@ -382,6 +397,10 @@ export default function TeacherFormPage() {
                   </div>
 
                   {/* Phone */}
+
+                  {/* Auto-detect country and code for Mobile */}
+
+                  {/* Auto-detect country and code for Mobile */}
                   <div>
                     <label className="block mb-1 text-sm font-medium">Mobile</label>
                     <Controller
@@ -390,7 +409,7 @@ export default function TeacherFormPage() {
                       rules={{ required: "Phone number is required" }}
                       render={({ field }) => (
                         <PhoneInput
-                          country="us"
+                          country={geoCountryCode || undefined}
                           value={field.value}
                           onChange={field.onChange}
                           inputProps={{ name: field.name, required: true }}
@@ -410,7 +429,6 @@ export default function TeacherFormPage() {
                     <select
                       {...register("country", { required: "Country is required" })}
                       className="w-full border border-gray-300 rounded-md px-4 h-[42px] text-gray-700"
-                      defaultValue=""
                     >
                       <option value="" disabled>
                         Choose your country

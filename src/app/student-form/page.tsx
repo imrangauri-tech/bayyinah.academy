@@ -33,9 +33,21 @@ const StudentFormPage = () => {
   const [popupVisible, setPopupVisible] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+    reset,
+    watch,
+    setValue,
+  } = useForm<StudentFormData>();
+
   // Auto-detect country and country code
   const [geoCountry, setGeoCountry] = useState("");
   const [geoCountryCode, setGeoCountryCode] = useState("");
+
   useEffect(() => {
     fetch("https://ipapi.co/json/")
       .then(res => res.json())
@@ -45,21 +57,19 @@ const StudentFormPage = () => {
       });
   }, []);
 
+  // Set the country field when geoCountry is detected
+  useEffect(() => {
+    if (geoCountry) {
+      setValue("country", geoCountry);
+    }
+  }, [geoCountry, setValue]);
+
   // Calculate tomorrow's date in YYYY-MM-DD format
   const tomorrow = React.useMemo(() => {
     const d = new Date();
     d.setDate(d.getDate() + 1);
     return d.toISOString().split("T")[0];
   }, []);
-
-  const {
-    register,
-    handleSubmit,
-    control,
-    formState: { errors },
-    reset,
-    watch,
-  } = useForm<StudentFormData>();
 
   const onSubmitStep1 = () => {
     setStep(2);
@@ -266,10 +276,6 @@ const StudentFormPage = () => {
                       <select
                         {...register("country", { required: "Country is required" })}
                         className="w-full border border-gray-300 rounded-md px-3 pr-8 h-[42px] text-sm appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        value={geoCountry && countries.includes(geoCountry) ? geoCountry : undefined}
-                        onChange={e => {
-                          register("country").onChange(e);
-                        }}
                       >
                         <option value="">Choose your country</option>
                         {countries.map((c) => (
