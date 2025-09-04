@@ -1220,8 +1220,7 @@ export default function TeacherFormPage() {
                     <option value="" disabled>Select</option>
                     <option>Full-time</option>
                     <option>Part-time</option>
-                    <option>Both</option>
-                  </select>
+                    </select>
                   {errors.employmentType && (
                     <p className="text-red-500 text-xs mt-1">{errors.employmentType.message}</p>
                   )}
@@ -1251,7 +1250,7 @@ export default function TeacherFormPage() {
           <div className="mt-6 space-y-2">
             <p className="text-sm font-medium text-gray-700">How did you find out about us</p>
             <div className="flex flex-wrap gap-3">
-              {["Facebook","Linkedin","Google","Al Furqan Website","Advertisement","Others"].map((opt) => {
+              {["Facebook","Linkedin","Google","Bayyinah Website","Advertisement","Others"].map((opt) => {
                 const selected: string[] = watch("discoverySources") || [];
                 const active = selected.includes(opt);
                 return (

@@ -400,7 +400,7 @@ const CareerPage = () => {
                           </span>{" "}
                           {job.title}
                         </h6>
-                        <h1 className="transition-all duration-300 ease-out group-hover:text-neutral-700">Permanent | 2 Years Exp. | Bilingual (English/Urdu)</h1>
+                        <h1 className="transition-all duration-300 ease-out group-hover:text-neutral-700">Permanent | 2 Years Exp. | Bilingual (English/Arabic)</h1>
                         <br />
                         <span className="bg-[#f4af2f] py-1 px-2 text-sm sm:text-base rounded-full text-white mb-5 flex max-w-max transition-all duration-300 ease-out group-hover:bg-[#e89b1e] group-hover:scale-105 transform">
                           Online

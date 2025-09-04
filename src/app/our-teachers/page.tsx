@@ -1,7 +1,7 @@
 // SEO metadata for /our-teachers
 export const metadata = {
-  title: "Quran Course Online | Learn Quran with Tajweed & Tafseer – Bayyinah Academy",
-  description: "Enroll in Bayyinah Academy’s Quran course online and master Tajweed, Tafseer, and Quran recitation with expert teachers. Flexible online classes for all ages. Start your Quran learning journey today.",
+  title: "Quran Teacher Online | Learn Quran with Bayyinah Academy – Expert Islamic Education",
+  description: "Join Bayyinah Academy to learn Quran online with expert Quran teachers. Get personalized Quran lessons, Tajweed training, and Islamic studies from the comfort of your home. Start your Quran learning journey today",
 };
 import PageHeroSection from "@/components/common/PageHeroSection";
 import { Button } from "@/components/ui/button";
